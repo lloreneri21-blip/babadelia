@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Ba-Ba de l'IA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- HEADER AVEC NAVIGATION -->
+    <header>
+        <div class="header-content">
+            <div class="logo">🤖 Ba-Ba de l'IA</div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="comprendre.html">Comprendre</a></li>
+                    <li><a href="utiliser.html">Utiliser</a></li>
+                    <li><a href="reconnaitre.html">Reconnaître</a></li>
+                    <li><a href="simulateur.html">Simulateur</a></li>
+                    <li><a href="quiz.html" class="active">Quiz</a></li>
+                    <li><a href="conseils.html">Conseils</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main>
+        <div class="container">
+            <!-- En-tête de la page -->
+            <section class="page-header">
+                <h1>🎯 Quiz interactifs</h1>
+                <p class="lead">Testez vos connaissances et apprenez à identifier les menaces liées à l'IA !</p>
+            </section>
+
+            <!-- Score tracker -->
+            <section>
+                <div class="score-tracker">
+                    <h3>📊 Votre progression</h3>
+                    <div class="score-display">
+                        <span id="score">0</span> / <span id="total">10</span> points
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz : Comprendre l'IA -->
+            <section>
+                <h2>🧠 Partie 1 : Comprendre l'IA</h2>
+                
+                <!-- Question 1 -->
+                <div class="quiz-question">
+                    <h3>Question 1 : Qu'est-ce qu'un deepfake ?</h3>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 1)">
+                        A) Un logiciel antivirus avancé
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, true, 1)">
+                        B) Une vidéo ou audio falsifié par l'IA
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 1)">
+                        C) Un type de virus informatique
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 1)">
+                        D) Un réseau social
+                    </button>
+                    <div class="quiz-feedback" id="feedback-1"></div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question">
+                    <h3>Question 2 : Quel est l'avantage principal de l'IA dans la vie quotidienne ?</h3>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 2)">
+                        A) Elle remplace complètement l'intelligence humaine
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, true, 2)">
+                        B) Elle automatise les tâches répétitives et fait gagner du temps
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 2)">
+                        C) Elle ne fait jamais d'erreurs
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 2)">
+                        D) Elle est gratuite dans tous les cas
+                    </button>
+                    <div class="quiz-feedback" id="feedback-2"></div>
+                </div>
+            </section>
+
+            <!-- Quiz : Identifier le phishing -->
+            <section>
+                <h2>🎣 Partie 2 : Identifier le phishing</h2>
+                
+                <!-- Question 3 -->
+                <div class="quiz-question">
+                    <h3>Question 3 : Quel est le premier signe d'un email de phishing ?</h3>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 3)">
+                        A) Il contient des images
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, true, 3)">
+                        B) L'adresse de l'expéditeur est suspecte
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 3)">
+                        C) Il est trop long
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 3)">
+                        D) Il utilise des emojis
+                    </button>
+                    <div class="quiz-feedback" id="feedback-3"></div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="quiz-question">
+                    <h3>Question 4 : Que devez-vous faire si vous recevez un message urgent demandant vos informations bancaires ?</h3>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 4)">
+                        A) Répondre immédiatement avec les informations
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 4)">
+                        B) Cliquer sur le lien pour vérifier
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, true, 4)">
+                        C) Ignorer le message et contacter directement votre banque
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 4)">
+                        D) Transférer le message à vos amis
+                    </button>
+                    <div class="quiz-feedback" id="feedback-4"></div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="quiz-question">
+                    <h3>Question 5 : Qu'est-ce qu'une URL raccourcie peut cacher ?</h3>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 5)">
+                        A) Rien, c'est juste plus court
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, true, 5)">
+                        B) Un lien vers un site malveillant
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 5)">
+                        C) Une image
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 5)">
+                        D) Un document PDF
+                    </button>
+                    <div class="quiz-feedback" id="feedback-5"></div>
+                </div>
+            </section>
+
+            <!-- Quiz : Reconnaître les deepfakes -->
+            <section>
+                <h2>🎭 Partie 3 : Reconnaître les deepfakes</h2>
+                
+                <!-- Question 6 -->
+                <div class="quiz-question">
+                    <h3>Question 6 : Quel indice visuel peut révéler un deepfake ?</h3>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 6)">
+                        A) La personne porte des lunettes
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, true, 6)">
+                        B) Des clignements des yeux anormaux
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 6)">
+                        C) La vidéo est en haute définition
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 6)">
+                        D) La personne sourit
+                    </button>
+                    <div class="quiz-feedback" id="feedback-6"></div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="quiz-question">
+                    <h3>Question 7 : Quel indice audio peut trahir un deepfake ?</h3>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 7)">
+                        A) La personne parle fort
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 7)">
+                        B) Il y a de la musique de fond
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, true, 7)">
+                        C) La voix sonne robotique ou artificielle
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 7)">
+                        D) La personne parle plusieurs langues
+                    </button>
+                    <div class="quiz-feedback" id="feedback-7"></div>
+                </div>
+            </section>
+
+            <!-- Quiz : Utilisation sûre de l'IA -->
+            <section>
+                <h2>🚀 Partie 4 : Utilisation sûre de l'IA</h2>
+                
+                <!-- Question 8 -->
+                <div class="quiz-question">
+                    <h3>Question 8 : Quelles informations NE devez-vous JAMAIS partager avec une IA ?</h3>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 8)">
+                        A) Des questions sur la météo
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, true, 8)">
+                        B) Vos mots de passe et numéros de carte bancaire
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 8)">
+                        C) Des idées de recettes de cuisine
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 8)">
+                        D) Des demandes de traduction
+                    </button>
+                    <div class="quiz-feedback" id="feedback-8"></div>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="quiz-question">
+                    <h3>Question 9 : Que faire si l'IA vous donne une information importante ?</h3>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 9)">
+                        A) Lui faire totalement confiance sans vérifier
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, true, 9)">
+                        B) Vérifier l'information avec d'autres sources fiables
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 9)">
+                        C) La partager immédiatement sur les réseaux sociaux
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 9)">
+                        D) L'ignorer complètement
+                    </button>
+                    <div class="quiz-feedback" id="feedback-9"></div>
+                </div>
+            </section>
+
+            <!-- Quiz : Vigilance numérique -->
+            <section>
+                <h2>🛡️ Partie 5 : Vigilance numérique</h2>
+                
+                <!-- Question 10 -->
+                <div class="quiz-question">
+                    <h3>Question 10 : Si vous recevez une vidéo choquante d'une personnalité publique, quelle doit être votre première réaction ?</h3>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 10)">
+                        A) La partager immédiatement pour alerter vos proches
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, true, 10)">
+                        B) Vérifier la source et chercher des signes de deepfake
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 10)">
+                        C) Commenter négativement sur la personnalité
+                    </button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false, 10)">
+                        D) Télécharger la vidéo sur votre ordinateur
+                    </button>
+                    <div class="quiz-feedback" id="feedback-10"></div>
+                </div>
+            </section>
+
+            <!-- Résultats finaux -->
+            <section>
+                <div class="final-results" id="final-results" style="display: none;">
+                    <h2>🎉 Quiz terminé !</h2>
+                    <div class="final-score">
+                        <p class="score-text">Votre score final :</p>
+                        <p class="score-big"><span id="final-score">0</span> / 10</p>
+                    </div>
+                    <div id="score-message"></div>
+                    <button class="btn-large" onclick="resetQuiz()">🔄 Recommencer le quiz</button>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section class="navigation-section">
+                <div class="nav-links">
+                    <a href="simulateur.html" class="nav-link prev">← Simulateur</a>
+                    <a href="conseils.html" class="nav-link next">Conseils pratiques →</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>🛡️ <strong>Ba-Ba de l'IA</strong> - Protégez-vous et devenez autonome dans le monde numérique</p>
+        <p>© 2026 - Site éducatif pour la prévention des arnaques liées à l'IA</p>
+        <p><a href="index.html">← Retour à l'accueil</a></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

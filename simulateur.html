@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur - Ba-Ba de l'IA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- HEADER AVEC NAVIGATION -->
+    <header>
+        <div class="header-content">
+            <div class="logo">🤖 Ba-Ba de l'IA</div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="comprendre.html">Comprendre</a></li>
+                    <li><a href="utiliser.html">Utiliser</a></li>
+                    <li><a href="reconnaitre.html">Reconnaître</a></li>
+                    <li><a href="simulateur.html" class="active">Simulateur</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="conseils.html">Conseils</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main>
+        <div class="container">
+            <!-- En-tête de la page -->
+            <section class="page-header">
+                <h1>🔬 Simulateur d'analyse de message suspect</h1>
+                <p class="lead">Collez un message que vous avez reçu et que vous trouvez suspect. Notre analyseur détectera automatiquement les signes d'une potentielle arnaque.</p>
+            </section>
+
+            <!-- Simulateur -->
+            <section>
+                <h2>📝 Analysez votre message</h2>
+                
+                <div class="simulator-box">
+                    <label for="message-input">Collez le message suspect ici :</label>
+                    <textarea 
+                        id="message-input" 
+                        placeholder="Exemple de message suspect :&#10;&#10;'Bonjour, &#10;&#10;Votre colis est en attente de livraison. Pour le recevoir, veuillez payer des frais de 2,99€ en cliquant sur ce lien : bit.ly/colis29x&#10;&#10;Cordialement,&#10;La Poste'"></textarea>
+                    
+                    <button class="btn-analyze" onclick="analyzeMessage()">
+                        🔍 Analyser le message
+                    </button>
+                </div>
+
+                <!-- Zone de résultat -->
+                <div id="analysis-result"></div>
+            </section>
+
+            <!-- Exemples à tester -->
+            <section>
+                <h2>💡 Exemples de messages à tester</h2>
+                <p>Cliquez sur un exemple pour le copier dans le simulateur :</p>
+                
+                <div class="examples-grid">
+                    <div class="example-card" onclick="loadExample(1)">
+                        <h3>🚨 Exemple 1 : Arnaque bancaire</h3>
+                        <p class="example-preview">"URGENT : Votre compte bancaire a été bloqué suite à une activité suspecte. Cliquez ici immédiatement pour le débloquer : bit.ly/secure-bank..."</p>
+                        <button class="btn-small">Tester cet exemple →</button>
+                    </div>
+                    
+                    <div class="example-card" onclick="loadExample(2)">
+                        <h3>📦 Exemple 2 : Faux colis</h3>
+                        <p class="example-preview">"Bonjour, votre colis est en attente. Payez 2,99€ de frais de stockage pour organiser la livraison..."</p>
+                        <button class="btn-small">Tester cet exemple →</button>
+                    </div>
+                    
+                    <div class="example-card" onclick="loadExample(3)">
+                        <h3>✅ Exemple 3 : Message légitime</h3>
+                        <p class="example-preview">"Bonjour, je vous confirme notre rendez-vous de demain à 14h dans nos bureaux. N'hésitez pas si vous avez des questions..."</p>
+                        <button class="btn-small">Tester cet exemple →</button>
+                    </div>
+                    
+                    <div class="example-card" onclick="loadExample(4)">
+                        <h3>💰 Exemple 4 : Faux gain</h3>
+                        <p class="example-preview">"Félicitations ! Vous avez gagné un iPhone 15 Pro Max ! Cliquez ici pour réclamer votre prix avant ce soir..."</p>
+                        <button class="btn-small">Tester cet exemple →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comment ça marche -->
+            <section>
+                <h2>🛠️ Comment fonctionne l'analyseur ?</h2>
+                
+                <div class="how-it-works">
+                    <div class="step-card">
+                        <span class="step-number">1</span>
+                        <h3>Analyse des mots-clés</h3>
+                        <p>L'analyseur recherche des mots et expressions typiques des arnaques : "urgent", "cliquez ici", "compte bloqué", "gagné", etc.</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <span class="step-number">2</span>
+                        <h3>Détection des URLs suspectes</h3>
+                        <p>Il identifie les liens raccourcis (bit.ly, goo.gl) souvent utilisés pour masquer des sites malveillants.</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <span class="step-number">3</span>
+                        <h3>Analyse de l'urgence</h3>
+                        <p>Il détecte l'usage excessif de majuscules et de points d'exclamation, signes d'une tentative de pression.</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <span class="step-number">4</span>
+                        <h3>Calcul du score de suspicion</h3>
+                        <p>Chaque indicateur augmente le score. Plus le score est élevé, plus le message est suspect.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Limites de l'outil -->
+            <section>
+                <h2>⚠️ Limites de cet outil</h2>
+                
+                <div class="warning-box">
+                    <h3>Cet analyseur est un outil pédagogique simplifié</h3>
+                    <p><strong>Il ne remplace PAS votre jugement !</strong></p>
+                    <ul>
+                        <li>Il peut manquer certaines arnaques sophistiquées</li>
+                        <li>Il peut signaler des faux positifs (messages légitimes marqués comme suspects)</li>
+                        <li>Les arnaques évoluent constamment et développent de nouvelles techniques</li>
+                        <li>Certains messages légitimes peuvent contenir des mots-clés déclencheurs</li>
+                    </ul>
+                    <p><strong>Règle d'or :</strong> En cas de doute, vérifiez toujours auprès de l'expéditeur par un canal officiel.</p>
+                </div>
+            </section>
+
+            <!-- Conseils supplémentaires -->
+            <section>
+                <h2>💡 Conseils pour aller plus loin</h2>
+                
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <span class="tip-icon">📧</span>
+                        <h3>Vérifiez l'adresse email</h3>
+                        <p>Survolez l'expéditeur pour voir l'adresse réelle. Attention aux fautes subtiles dans le domaine.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <span class="tip-icon">🔗</span>
+                        <h3>Survolez les liens</h3>
+                        <p>Ne cliquez jamais directement. Survolez pour voir l'URL réelle dans le coin de votre navigateur.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <span class="tip-icon">📞</span>
+                        <h3>Contactez directement</h3>
+                        <p>Si un message prétend venir de votre banque, appelez-la directement avec le numéro officiel.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <span class="tip-icon">🛡️</span>
+                        <h3>Faites confiance à votre instinct</h3>
+                        <p>Si quelque chose vous semble bizarre ou trop beau pour être vrai, c'est probablement le cas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section class="navigation-section">
+                <div class="nav-links">
+                    <a href="reconnaitre.html" class="nav-link prev">← Reconnaître les arnaques</a>
+                    <a href="quiz.html" class="nav-link next">Testez vos connaissances →</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>🛡️ <strong>Ba-Ba de l'IA</strong> - Protégez-vous et devenez autonome dans le monde numérique</p>
+        <p>© 2026 - Site éducatif pour la prévention des arnaques liées à l'IA</p>
+        <p><a href="index.html">← Retour à l'accueil</a></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
