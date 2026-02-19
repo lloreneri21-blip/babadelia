@@ -1,0 +1,932 @@
+/* ==========================================
+   FICHIER CSS POUR BA-BA DE L'IA
+   Ce fichier contient tous les styles du site
+   ========================================== */
+
+/* ==========================================
+   STYLES GÉNÉRAUX
+   ========================================== */
+
+/* Réinitialisation des marges et padding pour tous les éléments */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Facilite le calcul des dimensions */
+}
+
+/* Styles du body - couleurs et police de base */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+/* ==========================================
+   STYLES POUR IMAGES ET VIDÉOS
+   ========================================== */
+
+/* Container pour centrer les images */
+.image-container {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
+/* Style des images de section */
+.section-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    display: block;
+    margin: 0 auto;
+    max-height: 500px;
+    object-fit: contain;
+}
+.image-container {
+    text-align: center;
+}
+
+.section-image {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/* Container pour centrer les vidéos */
+.video-container {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 800px;
+}
+
+/* Style des vidéos */
+.section-video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    background: #000;
+}
+
+/* Légende sous la vidéo */
+.video-caption {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Responsive pour les images et vidéos */
+@media (max-width: 768px) {
+    .section-image {
+        max-height: 300px;
+    }
+    
+    .video-container {
+        padding: 0.5rem;
+    }
+}
+
+
+/* ==========================================
+   HEADER ET NAVIGATION
+   ========================================== */
+
+/* En-tête fixe en haut de la page */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed; /* Reste visible lors du scroll */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Au-dessus de tout */
+    padding: 1rem 0;
+}
+
+/* Container pour centrer le contenu du header */
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style du logo/titre */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Menu de navigation horizontal */
+nav ul {
+    display: flex;
+    list-style: none; /* Enlève les puces */
+    gap: 2rem;
+}
+
+/* Liens de navigation */
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s; /* Animation douce au survol */
+}
+
+nav a:hover {
+    color: #667eea;
+}
+
+/* ==========================================
+   CONTENEUR PRINCIPAL
+   ========================================== */
+
+/* Espace pour le contenu sous le header fixe */
+main {
+    margin-top: 80px;
+    padding: 2rem;
+}
+
+/* Container pour limiter la largeur du contenu */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   SECTIONS
+   ========================================== */
+
+/* Style commun pour toutes les sections */
+section {
+    background: white;
+    border-radius: 15px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Titres des sections */
+h2 {
+    color: #667eea;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    color: #764ba2;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Paragraphes avec espacement */
+p {
+    margin-bottom: 1rem;
+}
+
+/* ==========================================
+   SECTION HERO (Introduction)
+   ========================================== */
+
+.hero {
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   CARTES (Cards) POUR LES CONTENUS
+   ========================================== */
+
+/* Grille pour afficher plusieurs cartes côte à côte */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Style d'une carte individuelle */
+.card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Soulève légèrement la carte */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #667eea;
+}
+
+/* Icônes emoji pour les cartes */
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* ==========================================
+   SIMULATEUR DE MESSAGE SUSPECT
+   ========================================== */
+
+/* Zone de texte pour entrer le message */
+#message-input {
+    width: 100%;
+    min-height: 150px;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    resize: vertical; /* Permet de redimensionner verticalement */
+}
+
+/* Bouton d'analyse */
+.btn-analyze {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-analyze:hover {
+    transform: scale(1.05); /* Agrandit légèrement au survol */
+}
+
+/* Zone de résultat après analyse */
+#analysis-result {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: none; /* Caché par défaut */
+}
+
+/* Résultat danger (message suspect) */
+.result-danger {
+    background: #ffe0e0;
+    border-left: 5px solid #dc3545;
+}
+
+/* Résultat sûr (message légitime) */
+.result-safe {
+    background: #d4edda;
+    border-left: 5px solid #28a745;
+}
+
+/* Résultat attention (prudence recommandée) */
+.result-warning {
+    background: #fff3cd;
+    border-left: 5px solid #ffc107;
+}
+
+/* ==========================================
+   QUIZ INTERACTIF
+   ========================================== */
+
+/* Container pour une question de quiz */
+.quiz-question {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+/* Boutons des options de réponse */
+.quiz-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.quiz-option:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+}
+
+/* Option correcte sélectionnée */
+.quiz-option.correct {
+    background: #d4edda;
+    border-color: #28a745;
+}
+
+/* Option incorrecte sélectionnée */
+.quiz-option.incorrect {
+    background: #ffe0e0;
+    border-color: #dc3545;
+}
+
+/* Message de feedback après réponse */
+.quiz-feedback {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    display: none; /* Caché jusqu'à ce qu'une réponse soit donnée */
+}
+
+/* ==========================================
+   LISTES DE CONSEILS
+   ========================================== */
+
+/* Liste avec des icônes de vérification */
+.tips-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tips-list li {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+}
+
+.tips-list li:before {
+    content: "✓ "; /* Icône de check */
+    color: #28a745;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+/* Liste d'avertissements (ce qu'il ne faut PAS faire) */
+.warning-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.warning-list li {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #fff3cd;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+}
+
+.warning-list li:before {
+    content: "⚠ ";
+    color: #ffc107;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer {
+    background: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+/* ==========================================
+   STYLES SPÉCIFIQUES MULTI-PAGES
+   ========================================== */
+
+/* Lien actif dans la navigation */
+nav a.active {
+    color: #667eea;
+    font-weight: 700;
+    border-bottom: 2px solid #667eea;
+}
+
+/* En-tête de page */
+.page-header {
+    text-align: center;
+    background: white;
+    padding: 3rem 2rem;
+}
+
+.page-header h1 {
+    color: #667eea;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Cartes cliquables sur l'accueil */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-link .card {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.card-link .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card-cta {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #667eea;
+    font-weight: 600;
+}
+
+/* Section CTA */
+.cta-section {
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem;
+}
+
+.btn-large {
+    display: inline-block;
+    background: white;
+    color: #667eea;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    margin-top: 1rem;
+}
+
+.btn-large:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Bloc de contenu */
+.content-block {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.content-block.danger {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+}
+
+/* Deux colonnes */
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.column {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.column.advantages {
+    border-left: 4px solid #28a745;
+}
+
+.column.risks {
+    border-left: 4px solid #dc3545;
+}
+
+/* Boxes d'information */
+.info-box, .warning-box {
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.info-box {
+    background: #e7f3ff;
+    border-left: 4px solid #2196f3;
+}
+
+.warning-box {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+}
+
+/* Exemples */
+.example-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.example-content {
+    margin-top: 1rem;
+}
+
+.before, .after {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+}
+
+.before {
+    background: #ffe0e0;
+}
+
+.after {
+    background: #d4edda;
+}
+
+/* Exemples de phishing */
+.example-phishing {
+    background: white;
+    border: 2px solid #dc3545;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.phishing-message {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.message-content {
+    background: white;
+    padding: 1rem;
+    border-left: 3px solid #dc3545;
+    margin-top: 0.5rem;
+}
+
+.phishing-analysis {
+    background: #ffe0e0;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* Checklist items */
+.checklist-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.checklist-item.danger {
+    border-left: 4px solid #dc3545;
+}
+
+/* Action steps */
+.action-steps {
+    display: grid;
+    gap: 1rem;
+}
+
+.step {
+    background: #e7f3ff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #2196f3;
+}
+
+.step.danger-step {
+    background: #ffe0e0;
+    border-left: 4px solid #dc3545;
+}
+
+/* Simulateur */
+.simulator-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.simulator-box label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #667eea;
+}
+
+/* Exemples à tester */
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.example-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.example-card:hover {
+    border-color: #667eea;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.example-preview {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+}
+
+.btn-small {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* How it works */
+.how-it-works {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.step-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.step-number {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background: #667eea;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Tips grid */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tip-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.tip-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Score tracker pour quiz */
+.score-tracker {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.score-display {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #667eea;
+    margin: 1rem 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: width 0.5s ease;
+}
+
+/* Résultats finaux du quiz */
+.final-results {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.score-big {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+/* Ressources */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.resource-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #2196f3;
+}
+
+.resource-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Checklist */
+.checklist-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.checklist {
+    list-style: none;
+    padding: 0;
+}
+
+.checklist li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.checklist input[type="checkbox"] {
+    margin-right: 1rem;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.checklist label {
+    cursor: pointer;
+}
+
+/* Navigation entre pages */
+.navigation-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #ddd;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.nav-link {
+    flex: 1;
+    padding: 1rem 2rem;
+    background: white;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #667eea;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.nav-link.prev::before {
+    content: "← ";
+}
+
+.nav-link.next::after {
+    content: " →";
+}
+
+/* Conclusion section */
+.conclusion-section {
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 15px;
+}
+
+/* Further learning */
+.further-learning {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* ==========================================
+   RESPONSIVE (Adaptation mobile)
+   ========================================== */
+
+/* Sur petits écrans (téléphones) */
+@media (max-width: 768px) {
+    .hero h1, .page-header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column; /* Menu vertical sur mobile */
+        gap: 1rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+    
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+    }
+    
+    .score-big {
+        font-size: 3rem;
+    }
+}
