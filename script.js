@@ -1,7 +1,9 @@
 // ===================================
 // BA-BA DE L'IA — Script principal
 // ===================================
-
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('✅ DOM carregado! JavaScript funcionando!');
+});
 // ===== QUIZ =====
 let score = 0;
 let answeredQuestions = new Set();
