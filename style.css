@@ -54,33 +54,6 @@ body {
 }
 
 
-
-/* Container pour centrer les vidéos */
-.video-container {
-    text-align: center;
-    margin: 2rem auto;
-    padding: 1rem;
-    max-width: 800px;
-}
-
-/* Style des vidéos */
-.section-video {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-    background: #000;
-}
-
-/* Légende sous la vidéo */
-.video-caption {
-    margin-top: 1rem;
-    font-style: italic;
-    color: #666;
-    font-size: 0.9rem;
-}
-
 /* Responsive pour les images et vidéos */
 @media (max-width: 768px) {
     .section-image {
