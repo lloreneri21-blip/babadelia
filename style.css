@@ -22,7 +22,7 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 /* ==========================================
-   STYLES POUR IMAGES ET VIDÉOS
+   STYLES POUR IMAGES 
    ========================================== */
 
 /* Container pour centrer les images */
@@ -54,7 +54,7 @@ body {
 }
 
 
-/* Responsive pour les images et vidéos */
+/* Responsive pour les images */
 @media (max-width: 768px) {
     .section-image {
         max-height: 300px;
